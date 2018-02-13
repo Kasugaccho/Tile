@@ -1,22 +1,35 @@
-﻿
-# include <Siv3D.hpp> // OpenSiv3D v0.2.1
+﻿//ドラッグアンドドロップでタイルを敷くプログラム
+#include <Siv3D.hpp>
+
+#define WINDOW_SIZE_X_G (960)
+#define WINDOW_SIZE_Y_G (540)
+#define TILE_SIZE_G (60)
 
 void Main()
 {
-	Graphics::SetBackground(ColorF(0.8, 0.9, 1.0));
+	Window::SetTitle(U"gaccho tiler");
+	Window::Resize(WINDOW_SIZE_X_G, WINDOW_SIZE_Y_G);
 
-	const Font font(50);
+	Array<s3d::DroppedFilePath> items;
 
-	const Texture textureCat(Emoji(U"🐈"), TextureDesc::Mipped);
-
-	while (System::Update())
+	while (System::Update(false))
 	{
-		font(U"Hello, Siv3D!🐣").drawAt(Window::Center(), Palette::Black);
 
-		font(Cursor::Pos()).draw(20, 400, ColorF(0.6));
+		if (DragDrop::HasNewFilePaths())
+		{
+			items = DragDrop::GetDroppedFilePaths();
 
-		textureCat.resized(80).draw(540, 380);
+			for (const auto& item : items)
+			{
+				Print(item.path);
 
-		Circle(Cursor::Pos(), 60).draw(ColorF(1, 0, 0, 0.5));
+				Texture miniTexture(item.path);
+				for (int i = 0; i < WINDOW_SIZE_X_G; i += TILE_SIZE_G) 
+					for (int j = 0; j < WINDOW_SIZE_Y_G; j += TILE_SIZE_G) 
+						miniTexture.resized(TILE_SIZE_G, TILE_SIZE_G).draw(i, j);
+
+			}
+		}
+
 	}
 }
