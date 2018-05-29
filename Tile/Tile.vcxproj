@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{6f3dc054-d626-461e-a9ca-a48b0bf72982}</ProjectGuid>
+    <ProjectGuid>{dfb2fd82-df01-4169-baab-684f40099197}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Tile</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
@@ -71,8 +71,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(SIV3D_0_2_1)\include;$(SIV3D_0_2_1)\include\ThirdParty;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SIV3D_0_2_1)\lib\Windows(x86);$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SIV3D_0_2_5)\include;$(SIV3D_0_2_5)\include\ThirdParty;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SIV3D_0_2_5)\lib\Windows(x86);$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)Intermediate\$(ProjectName)\Debug-x86\</OutDir>
     <IntDir>$(SolutionDir)Intermediate\$(ProjectName)\Debug-x86\Intermediate\</IntDir>
     <TargetName>$(ProjectName)(debug_32-bit)</TargetName>
@@ -80,8 +80,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(SIV3D_0_2_1)\include;$(SIV3D_0_2_1)\include\ThirdParty;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SIV3D_0_2_1)\lib\Windows(x64);$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SIV3D_0_2_5)\include;$(SIV3D_0_2_5)\include\ThirdParty;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SIV3D_0_2_5)\lib\Windows(x64);$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)Intermediate\$(ProjectName)\Debug-x64\</OutDir>
     <IntDir>$(SolutionDir)Intermediate\$(ProjectName)\Debug-x64\Intermediate\</IntDir>
     <TargetName>$(ProjectName)(debug_64-bit)</TargetName>
@@ -89,8 +89,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(SIV3D_0_2_1)\include;$(SIV3D_0_2_1)\include\ThirdParty;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SIV3D_0_2_1)\lib\Windows(x86);$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SIV3D_0_2_5)\include;$(SIV3D_0_2_5)\include\ThirdParty;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SIV3D_0_2_5)\lib\Windows(x86);$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)Intermediate\$(ProjectName)\Release-x86\</OutDir>
     <IntDir>$(SolutionDir)Intermediate\$(ProjectName)\Release-x86\Intermediate\</IntDir>
     <TargetName>$(ProjectName)(32-bit)</TargetName>
@@ -98,8 +98,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(SIV3D_0_2_1)\include;$(SIV3D_0_2_1)\include\ThirdParty;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SIV3D_0_2_1)\lib\Windows(x64);$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SIV3D_0_2_5)\include;$(SIV3D_0_2_5)\include\ThirdParty;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SIV3D_0_2_5)\lib\Windows(x64);$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)Intermediate\$(ProjectName)\Release-x64\</OutDir>
     <IntDir>$(SolutionDir)Intermediate\$(ProjectName)\Release-x64\Intermediate\</IntDir>
     <TargetName>$(ProjectName)(64-bit)</TargetName>
@@ -111,12 +111,13 @@
       </PrecompiledHeader>
       <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_SILENCE_CXX17_OLD_ALLOCATOR_MEMBERS_DEPRECATION_WARNING;_SILENCE_CXX17_UNCAUGHT_EXCEPTION_DEPRECATION_WARNING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_SILENCE_CXX17_OLD_ALLOCATOR_MEMBERS_DEPRECATION_WARNING;_SILENCE_CXX17_UNCAUGHT_EXCEPTION_DEPRECATION_WARNING;_SILENCE_CXX17_RESULT_OF_DEPRECATION_WARNING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
       <LanguageStandard>stdcpplatest</LanguageStandard>
+      <MinimalRebuild>false</MinimalRebuild>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -132,11 +133,12 @@
       </PrecompiledHeader>
       <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_DEBUG;_WINDOWS;_SILENCE_CXX17_OLD_ALLOCATOR_MEMBERS_DEPRECATION_WARNING;_SILENCE_CXX17_UNCAUGHT_EXCEPTION_DEPRECATION_WARNING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;_SILENCE_CXX17_OLD_ALLOCATOR_MEMBERS_DEPRECATION_WARNING;_SILENCE_CXX17_UNCAUGHT_EXCEPTION_DEPRECATION_WARNING;_SILENCE_CXX17_RESULT_OF_DEPRECATION_WARNING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <LanguageStandard>stdcpplatest</LanguageStandard>
+      <MinimalRebuild>false</MinimalRebuild>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -154,7 +156,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_SILENCE_CXX17_OLD_ALLOCATOR_MEMBERS_DEPRECATION_WARNING;_SILENCE_CXX17_UNCAUGHT_EXCEPTION_DEPRECATION_WARNING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_SILENCE_CXX17_OLD_ALLOCATOR_MEMBERS_DEPRECATION_WARNING;_SILENCE_CXX17_UNCAUGHT_EXCEPTION_DEPRECATION_WARNING;_SILENCE_CXX17_RESULT_OF_DEPRECATION_WARNING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
@@ -178,7 +180,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>NDEBUG;_WINDOWS;_SILENCE_CXX17_OLD_ALLOCATOR_MEMBERS_DEPRECATION_WARNING;_SILENCE_CXX17_UNCAUGHT_EXCEPTION_DEPRECATION_WARNING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;_SILENCE_CXX17_OLD_ALLOCATOR_MEMBERS_DEPRECATION_WARNING;_SILENCE_CXX17_UNCAUGHT_EXCEPTION_DEPRECATION_WARNING;_SILENCE_CXX17_RESULT_OF_DEPRECATION_WARNING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
@@ -217,7 +219,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App\engine\emoji\noto7_dictionary.dat" />
-    <None Include="App\engine\font\fontawesome\FontAwesome.otf.zst" />
+    <None Include="App\engine\font\fontawesome\brands.otf.zst" />
+    <None Include="App\engine\font\fontawesome\solid.otf.zst" />
     <None Include="App\engine\font\mplus\LICENSE_E" />
     <None Include="App\engine\font\mplus\mplus-1p-black.ttf.zst" />
     <None Include="App\engine\font\mplus\mplus-1p-bold.ttf.zst" />
@@ -228,12 +231,18 @@
     <None Include="App\engine\font\mplus\mplus-1p-thin.ttf.zst" />
     <None Include="App\engine\font\noto\NotoColorEmoji.ttf.zst" />
     <None Include="App\engine\font\noto\NotoEmoji-Regular.ttf.zst" />
+    <None Include="App\engine\objdetect\haarcascade\eye.xml.zst" />
+    <None Include="App\engine\objdetect\haarcascade\eye_eyeglasses.xml.zst" />
+    <None Include="App\engine\objdetect\haarcascade\face_anime.xml.zst" />
+    <None Include="App\engine\objdetect\haarcascade\frontal_catface.xml.zst" />
+    <None Include="App\engine\objdetect\haarcascade\frontal_face_alt2.xml.zst" />
     <None Include="App\engine\shader\line_dot.ps" />
     <None Include="App\engine\shader\line_round_dot.ps" />
     <None Include="App\engine\shader\shape.ps" />
     <None Include="App\engine\shader\sprite.ps" />
     <None Include="App\engine\shader\sprite.vs" />
     <None Include="App\engine\shader\sprite_sdf.ps" />
+    <None Include="App\engine\soundfont\GMGSx.sf2.zst" />
     <None Include="App\example\a1a_testing" />
     <None Include="App\example\a1a_training" />
     <None Include="App\example\empty.bin" />
@@ -242,11 +251,14 @@
     <None Include="App\example\test.toml" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="App\engine\font\fontawesome\LICENSE_OFL.txt" />
+    <Text Include="App\engine\font\fontawesome\LICENSE.txt" />
     <Text Include="App\engine\font\noto\LICENSE_OFL.txt" />
     <Text Include="App\example\LICENSE.txt" />
     <Text Include="App\example\script.txt" />
     <Text Include="App\example\test.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="App\example\test.xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
